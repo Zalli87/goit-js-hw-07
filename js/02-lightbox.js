@@ -10,8 +10,6 @@ galleryEl.insertAdjacentHTML('afterbegin', galleryItem);
 
 galleryEl.addEventListener('click', onGalleryItemClick);
 
-var lightbox = new SimpleLightbox('.gallery a', { captionSelector: 'img', captionPosition: 'bottom', captionsData: "alt", captionDelay: 250});
-
 function onGalleryItemClick(event) {
     event.preventDefault();
  };
@@ -23,4 +21,6 @@ function createGalleryItemMarkup(items) {
   <img class="gallery__image" src="${original}" alt="${description}" />
 </a>`
     }).join('');
-}
+};
+
+const lightbox = new SimpleLightbox('.gallery a', { captionSelector: 'img', captionPosition: 'bottom', captionsData: "alt", captionDelay: 250});
