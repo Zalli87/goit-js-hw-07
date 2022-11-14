@@ -10,7 +10,13 @@ galleryEl.addEventListener('click', onGalleryItemClick);
 
 
 function onGalleryItemClick(event) {
-    event.preventDefault();
+  event.preventDefault();
+
+  const isImgClick = event.target.nodeName === 'IMG';
+ 
+  if (!isImgClick) {
+    return
+  }
     const instance = basicLightbox.create(`
     <img src="${event.target.dataset.source}" width="800" height="600">
 `)
